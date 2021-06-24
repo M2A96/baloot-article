@@ -13,6 +13,7 @@ import com.example.ataei.util.extentions.observeSafe
 
 class HomeListFragment : BaseFragment<HomeListViewModel, FragmentHomeListBinding>() {
 
+    private val TAG = HomeListFragment::class.java.simpleName
     override val layoutId: Int = R.layout.fragment_home_list
     override val viewModel: HomeListViewModel by getLazyViewModel(ViewModelScope.ACTIVITY)
 
@@ -25,10 +26,7 @@ class HomeListFragment : BaseFragment<HomeListViewModel, FragmentHomeListBinding
         )
 
         viewModel.articles.observeSafe(viewLifecycleOwner) {
-            Log.d("TAG", "onViewInitialized: $it")
+            Log.d(TAG, "onViewInitialized: $it")
         }
-
     }
-
-
 }

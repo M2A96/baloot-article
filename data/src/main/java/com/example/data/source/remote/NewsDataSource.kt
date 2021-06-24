@@ -11,9 +11,11 @@ interface NewsDataSource {
     @GET("everything")
     suspend fun getArticles(
         @Query("q") query: String = "google",
-        @Query("from") from: String = "2021-06-23",
+        @Query("from") from: String = "2021-06-20",
         @Query("to") to: String = "2021-06-23",
         @Query("sortBy") sortBy: String = "popularity",
+        @Query("pageSize") pageSize: Int = 25,
+        @Query("page") page: Int = 0,
     ): ResponseWrapperDto<List<ArticleDto>>
 
 }

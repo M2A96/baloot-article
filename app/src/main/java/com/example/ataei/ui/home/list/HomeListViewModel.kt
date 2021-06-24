@@ -8,18 +8,21 @@ import arrow.core.Either.Left
 import arrow.core.Either.Right
 import com.example.ataei.ui.base.BaseViewModel
 import com.example.data.model.Error
-import com.example.data.repository.GameRepository
+import com.example.data.repository.NewsRepository
 import com.example.data.source.remote.model.ArticleDto
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class HomeListViewModel @Inject constructor(
-    private val gameRepository: GameRepository
+    private val gameRepository: NewsRepository
 ) : BaseViewModel() {
 
     private val _articles = MutableLiveData<List<ArticleDto>>(emptyList())
     val articles: LiveData<List<ArticleDto>>
         get() = _articles
+
+    private val pageSize = 20
+    private var pageNumber = 0
 
 
     init {
@@ -29,7 +32,7 @@ class HomeListViewModel @Inject constructor(
 
     private fun getArticles() {
         viewModelScope.launch {
-            when (val result = gameRepository.getArticles()) {
+            when (val result = gameRepository.getArticles(pageNumber++)) {
                 is Right -> _articles.value = result.b
                 is Left -> showError(result.a)
             }

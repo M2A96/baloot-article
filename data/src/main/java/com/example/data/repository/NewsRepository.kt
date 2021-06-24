@@ -1,5 +1,6 @@
 package com.example.data.repository
 
+import android.util.Log
 import arrow.core.Either
 import com.example.data.di.qualifier.Concrete
 import com.example.data.model.Error
@@ -8,14 +9,15 @@ import com.example.data.source.remote.model.ArticleDto
 import com.example.mapper.ErrorMapper
 import javax.inject.Inject
 
-class GameRepository @Inject constructor(
+class NewsRepository @Inject constructor(
     errorMapper: ErrorMapper,
     @Concrete private val newsDataSource: NewsDataSource
 ) : BaseRepository(errorMapper) {
 
-    suspend fun getArticles(): Either<Error, List<ArticleDto>> {
+    suspend fun getArticles(page: Int): Either<Error, List<ArticleDto>> {
+        Log.d("TAG", "getArticles: page number is $page")
         return safeApiCall {
-            newsDataSource.getArticles()
+            newsDataSource.getArticles(page = page)
         }.map {
             it.data
         }

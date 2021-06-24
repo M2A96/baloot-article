@@ -121,7 +121,7 @@ object NetworkModule {
 
     @Provides
     @Concrete
-    fun provideConcreteGameDataSource(@WithoutToken retrofit: Retrofit): NewsDataSource {
+    fun provideConcreteNewsDataSource(@WithoutToken retrofit: Retrofit): NewsDataSource {
         return retrofit.create(NewsDataSource::class.java)
     }
 
