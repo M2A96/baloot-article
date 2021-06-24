@@ -16,5 +16,4 @@ object AppModule {
     @Singleton
     fun provideContext(app: GameApplication): Context = app
 
-
 }
