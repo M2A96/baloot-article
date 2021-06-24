@@ -3,9 +3,14 @@ package com.example.data.source.remote.model
 import com.google.gson.annotations.SerializedName
 
 data class ResponseWrapperDto<T : Any>(
-    @SerializedName("data")
+    @SerializedName("articles")
     val data: T,
 
-    @SerializedName("remote")
-    val status: StatusDto
+    @SerializedName("status")
+    val status: StatusDto,
+
+    @SerializedName("totalResults")
+    val totalResults: Int
+
+
 )
