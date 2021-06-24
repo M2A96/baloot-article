@@ -1,3 +1,3 @@
 include ':data'
 include ':app'
-rootProject.name = "Architecture Code Base"
+rootProject.name = "Baloot Test App"

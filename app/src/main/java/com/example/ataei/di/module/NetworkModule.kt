@@ -3,6 +3,7 @@ package com.example.ataei.di.module
 import com.example.ataei.BuildConfig
 import com.example.ataei.SecretFields
 import com.example.data.di.qualifier.Concrete
+import com.example.data.di.qualifier.WithToken
 import com.example.data.di.qualifier.WithoutToken
 import com.example.data.source.remote.GameDataSource
 import com.facebook.stetho.okhttp3.StethoInterceptor
@@ -71,7 +72,7 @@ object NetworkModule {
      */
     @Singleton
     @Provides
-    fun provideOkHttpClient(headers: Headers): OkHttpClient {
+    fun provideOkHttpClient(headers: Headers, secretFields: SecretFields): OkHttpClient {
         val builder = OkHttpClient.Builder()
         if (BuildConfig.DEBUG) {
             val loggingInterceptor = HttpLoggingInterceptor()
@@ -86,6 +87,7 @@ object NetworkModule {
                 val request = chain.request()
                 val requestBuilder = request.newBuilder()
                     .headers(headers)
+                    .addHeader("x-api-key", secretFields.apiKey)
                     .method(request.method(), request.body())
                 chain.proceed(requestBuilder.build())
             }
@@ -117,7 +119,6 @@ object NetworkModule {
             .baseUrl(secretFields.getBaseUrl())
             .build()
     }
-
 
     @Provides
     @Concrete
