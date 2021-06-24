@@ -1,9 +1,9 @@
 package com.example.ataei.di.module
 
-import androidx.core.content.FileProvider
 import com.example.ataei.util.provider.BaseResourceProvider
 import com.example.ataei.util.provider.ResourceProvider
 import com.example.data.source.local.file.BaseFileProvider
+import com.example.data.source.local.file.FileProvider
 import dagger.Binds
 import dagger.Module
 

@@ -1,7 +1,5 @@
 package com.example.ataei.ui.home.list
 
-import androidx.databinding.BindingAdapter
-import com.example.ataei.ui.custom.MagicalImageView
 
 data class GameItem(
     val name: String,

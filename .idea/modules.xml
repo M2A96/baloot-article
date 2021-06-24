@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Architecture-Code-Base.iml" filepath="$PROJECT_DIR$/.idea/Architecture-Code-Base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Architecture_Code_Base.iml" filepath="$PROJECT_DIR$/.idea/modules/Architecture_Code_Base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Architecture_Code_Base.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Architecture_Code_Base.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Architecture_Code_Base.buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/Architecture_Code_Base.buildSrc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/Architecture_Code_Base.data.iml" filepath="$PROJECT_DIR$/.idea/modules/data/Architecture_Code_Base.data.iml" />
     </modules>
   </component>
 </project>

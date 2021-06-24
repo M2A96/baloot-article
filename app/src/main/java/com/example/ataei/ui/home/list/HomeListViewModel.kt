@@ -8,7 +8,6 @@ import androidx.lifecycle.viewModelScope
 import arrow.core.Either.Left
 import arrow.core.Either.Right
 import com.example.ataei.ui.base.BaseViewModel
-import com.example.ataei.ui.custom.MagicalImageView
 import com.example.data.model.Error
 import com.example.data.model.game.Game
 import com.example.data.repository.GameRepository
