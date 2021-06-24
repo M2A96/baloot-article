@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Ataei</string>
+    <string name="app_name">News</string>
     <string name="image_not_found">عکس مورد نظر پیدا نشد</string>
     <string name="suggested_games">بازی های پیشنهادی</string>
 
@@ -8,4 +8,6 @@
     <string name="error_timeout">Request timed out!</string>
     <string name="error_unauthorized">You are not authorized to do this!</string>
     <string name="error_null">Nothing received!</string>
+    <string name="profile">profile</string>
+    <string name="articles">articles</string>
 </resources>

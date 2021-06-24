@@ -1,6 +1,7 @@
 package com.example.ataei.ui.home
 
 import com.example.ataei.ui.home.list.HomeListFragment
+import com.example.ataei.ui.home.profile.ProfileFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -10,7 +11,12 @@ import dagger.android.ContributesAndroidInjector
 
 @Module
 abstract class HomeFragmentProvider {
+
     @ContributesAndroidInjector
     abstract fun provideHomeListFragment(): HomeListFragment
+
+    @ContributesAndroidInjector
+    abstract fun provideProfileFragment(): ProfileFragment
+
 }
 
