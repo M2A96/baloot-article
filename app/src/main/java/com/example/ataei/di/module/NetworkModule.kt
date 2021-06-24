@@ -3,9 +3,8 @@ package com.example.ataei.di.module
 import com.example.ataei.BuildConfig
 import com.example.ataei.SecretFields
 import com.example.data.di.qualifier.Concrete
-import com.example.data.di.qualifier.WithToken
 import com.example.data.di.qualifier.WithoutToken
-import com.example.data.source.remote.GameDataSource
+import com.example.data.source.remote.NewsDataSource
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -122,8 +121,8 @@ object NetworkModule {
 
     @Provides
     @Concrete
-    fun provideConcreteGameDataSource(@WithoutToken retrofit: Retrofit): GameDataSource {
-        return retrofit.create(GameDataSource::class.java)
+    fun provideConcreteGameDataSource(@WithoutToken retrofit: Retrofit): NewsDataSource {
+        return retrofit.create(NewsDataSource::class.java)
     }
 
 }

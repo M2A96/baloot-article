@@ -1,7 +1,6 @@
 package com.example.ataei.ui.home.list
 
 import android.util.Log
-import androidx.databinding.BindingAdapter
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -9,8 +8,8 @@ import arrow.core.Either.Left
 import arrow.core.Either.Right
 import com.example.ataei.ui.base.BaseViewModel
 import com.example.data.model.Error
-import com.example.data.model.game.Game
 import com.example.data.repository.GameRepository
+import com.example.data.source.remote.model.ArticleDto
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -18,32 +17,22 @@ class HomeListViewModel @Inject constructor(
     private val gameRepository: GameRepository
 ) : BaseViewModel() {
 
-    private val _games = MutableLiveData<List<GameItem>>(emptyList())
-    val games: LiveData<List<GameItem>>
-        get() = _games
+    private val _articles = MutableLiveData<List<ArticleDto>>(emptyList())
+    val articles: LiveData<List<ArticleDto>>
+        get() = _articles
 
 
     init {
-        getGames()
+        getArticles()
     }
 
 
-    private fun getGames() {
+    private fun getArticles() {
         viewModelScope.launch {
-            when (val result = gameRepository.getGames()) {
-                is Right -> _games.value = mapToGameItems(result.b)
+            when (val result = gameRepository.getArticles()) {
+                is Right -> _articles.value = result.b
                 is Left -> showError(result.a)
             }
-        }
-    }
-
-    private fun mapToGameItems(games: List<Game>): List<GameItem> {
-        return games.map { game ->
-            GameItem(
-                game.name,
-                game.preview,
-                game.business.name
-            )
         }
     }
 

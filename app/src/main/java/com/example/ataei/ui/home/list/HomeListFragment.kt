@@ -24,9 +24,8 @@ class HomeListFragment : BaseFragment<HomeListViewModel, FragmentHomeListBinding
             onItemClicked = viewModel::onItemClicked
         )
 
-        viewModel.games.observeSafe(viewLifecycleOwner) {
+        viewModel.articles.observeSafe(viewLifecycleOwner) {
             Log.d("TAG", "onViewInitialized: $it")
-            binding.adapter?.swapItems(it)
         }
 
     }

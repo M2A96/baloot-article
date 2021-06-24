@@ -7,7 +7,7 @@ data class ResponseWrapperDto<T : Any>(
     val data: T,
 
     @SerializedName("status")
-    val status: StatusDto,
+    val status: String,
 
     @SerializedName("totalResults")
     val totalResults: Int
