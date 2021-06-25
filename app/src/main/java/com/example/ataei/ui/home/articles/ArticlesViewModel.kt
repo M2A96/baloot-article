@@ -14,14 +14,14 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class ArticlesViewModel @Inject constructor(
-    private val gameRepository: NewsRepository
+    private val articlesRepository: NewsRepository
 ) : BaseViewModel() {
 
-    private val _articles = MutableLiveData<List<ArticleDto>>(emptyList())
-    val articles: LiveData<List<ArticleDto>>
+    private val _articles = MutableLiveData<List<ArticleItem>>(emptyList())
+    val articles: LiveData<List<ArticleItem>>
         get() = _articles
 
-    private var pageNumber = 1
+    private var pageNumber = 0
 
 
     init {
@@ -31,8 +31,8 @@ class ArticlesViewModel @Inject constructor(
 
     private fun getArticles() {
         viewModelScope.launch {
-            when (val result = gameRepository.getArticles(pageNumber++)) {
-                is Right -> _articles.value = result.b
+            when (val result = articlesRepository.getArticles(++pageNumber)) {
+                is Right -> _articles.value = mapToArticleItem(result.b)
                 is Left -> showError(result.a)
             }
         }
@@ -42,8 +42,22 @@ class ArticlesViewModel @Inject constructor(
         Log.d(TAG, "showError() called  with: error = [$error]")
     }
 
-    fun onItemClicked(gameItem: GameItem) {
-        Log.d(TAG, "onItemClicked() called  with: gamesItem = $gameItem")
+    fun onItemClicked(articleItem: ArticleItem) {
+        Log.d(TAG, "onItemClicked() called  with: gamesItem = $articleItem")
+    }
+
+    private fun mapToArticleItem(articleDtos: List<ArticleDto>): List<ArticleItem> {
+        return articleDtos.map {
+            ArticleItem(
+                title = it.title,
+                author = it.author,
+                description = it.description,
+                articleUrl = it.url,
+                imageUrl = it.urlToImage,
+                publishedAt = it.publishedAt,
+                content = it.content
+            )
+        }
     }
 
     companion object {

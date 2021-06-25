@@ -6,7 +6,7 @@ data class ArticleItem(
     val title: String,
     val description: String,
     val articleUrl: String,
+    val imageUrl: String,
     val publishedAt: String,
-    val content: String,
-    val imageUrl: Int = 0
+    val content: String
 )

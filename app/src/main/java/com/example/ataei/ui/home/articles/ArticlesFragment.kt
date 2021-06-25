@@ -18,12 +18,15 @@ class ArticlesFragment : BaseFragment<ArticlesViewModel, FragmentHomeListBinding
     override fun onViewInitialized(binding: FragmentHomeListBinding) {
         super.onViewInitialized(binding)
         binding.viewModel = viewModel
-        binding.adapter = SingleLayoutAdapter<GameItem, ArticleItemBinding>(
+        binding.adapter = SingleLayoutAdapter<ArticleItem, ArticleItemBinding>(
             layoutId = R.layout.article_item,
             onItemClicked = viewModel::onItemClicked
         )
 
+
+
         viewModel.articles.observeSafe(viewLifecycleOwner) {
+            binding.adapter?.swapItems(it)
             Log.d(TAG, "onViewInitialized: $it")
         }
     }
