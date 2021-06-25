@@ -70,6 +70,8 @@
             android:id="@+id/aboutMe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
+            android:onClick="@{() -> viewModel.openBottomSheetDialog()}"
             android:text="About Me"
             app:layout_constraintBottom_toBottomOf="parent" />
 

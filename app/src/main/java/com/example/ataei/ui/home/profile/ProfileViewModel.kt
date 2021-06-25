@@ -24,6 +24,12 @@ class ProfileViewModel @Inject constructor(
         }
     }
 
+    fun openBottomSheetDialog() {
+        fragmentAction {
+            AboutMeBottomSheet.getNewInstance().show(it.childFragmentManager, "tag")
+        }
+    }
+
     companion object {
         private const val myGithubLink = "https://github.com/Mohsenataei"
 
