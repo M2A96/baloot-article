@@ -31,7 +31,7 @@ class ProfileViewModel @Inject constructor(
     }
 
     companion object {
-        private const val myGithubLink = "https://github.com/Mohsenataei"
+        private const val myGithubLink = "https://github.com/Mohsenataei/Baloot-articles-Test-App"
 
         private const val myLinkedIn = "https://www.linkedin.com/in/mohsen-ataei/"
     }

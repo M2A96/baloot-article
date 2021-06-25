@@ -25,7 +25,6 @@ class ArticlesFragment : BaseFragment<ArticlesViewModel, FragmentHomeListBinding
             override fun onLoadMore(page: Int, totalItemsCount: Int, view: RecyclerView) {
                 viewModel.loadMore()
             }
-
         }
     }
 
