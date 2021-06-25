@@ -1,6 +1,7 @@
 package com.example.ataei.ui.base
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment
@@ -41,6 +42,24 @@ interface BaseNavigator {
             .createDestination()
             .setIntent(intent)
         ActivityNavigator(activity).navigate(destination, null, null, null)
+    }
+
+
+    /**
+     * Start an Activity
+     *
+     * @param activity requested activity
+     * @param
+     */
+    fun startActivity(activity: FragmentActivity, url: String) {
+        val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+
+        val destination = ActivityNavigator(activity)
+            .createDestination()
+            .setIntent(browserIntent)
+
+        ActivityNavigator(activity).navigate(destination, null, null, null)
+
     }
 
 
