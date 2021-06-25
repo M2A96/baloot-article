@@ -4,9 +4,11 @@ object Libs {
     object Plugins {
         const val gradle = "com.android.tools.build:gradle:${Versions.gradle}"
         const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
-        const val gradleVersions = "com.github.ben-manes:gradle-versions-plugin:${Versions.gradleVersions}"
+        const val gradleVersions =
+            "com.github.ben-manes:gradle-versions-plugin:${Versions.gradleVersions}"
         const val ktlint = "com.pinterest:ktlint:${Versions.ktlint}"
-        const val safeargs = "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navigationComponent}"
+        const val safeargs =
+            "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navigationComponent}"
     }
 
     object Modules {
@@ -23,23 +25,29 @@ object Libs {
         const val roomCompiler = "androidx.room:room-compiler:${Versions.room}"
         const val material = "com.google.android.material:material:${Versions.material}"
         const val annotations = "androidx.annotation:annotation:${Versions.material}"
-        const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
-        const val navigationUi ="androidx.navigation:navigation-ui-ktx:${Versions.navigationComponent}"
-        const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navigationComponent}"
+        const val constraintLayout =
+            "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
+        const val navigationUi =
+            "androidx.navigation:navigation-ui-ktx:${Versions.navigationComponent}"
+        const val navigationFragment =
+            "androidx.navigation:navigation-fragment-ktx:${Versions.navigationComponent}"
         const val fragment = "androidx.fragment:fragment-ktx:${Versions.fragment}"
     }
 
     object Common {
         const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${Versions.kotlin}"
-        const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
-        const val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
+        const val coroutines =
+            "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
+        const val coroutinesAndroid =
+            "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
         const val arrowCore = "io.arrow-kt:arrow-core:${Versions.arrow}"
         const val arrowSyntax = "io.arrow-kt:arrow-syntax:${Versions.arrow}"
         const val arrowMeta = "io.arrow-kt:arrow-meta:${Versions.arrow}"
         const val dagger = "com.google.dagger:dagger:${Versions.dagger}"
         const val daggerCompiler = "com.google.dagger:dagger-compiler:${Versions.dagger}"
         const val daggerAndroid = "com.google.dagger:dagger-android-support:${Versions.dagger}"
-        const val daggerAndroidCompiler = "com.google.dagger:dagger-android-processor:${Versions.dagger}"
+        const val daggerAndroidCompiler =
+            "com.google.dagger:dagger-android-processor:${Versions.dagger}"
         const val gson = "com.google.code.gson:gson:${Versions.gson}"
         const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
         const val retrofitGson = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
@@ -48,6 +56,7 @@ object Libs {
         const val stetho_OkHttp = "com.facebook.stetho:stetho-okhttp3:${Versions.stetho}"
         const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
         const val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.glide}"
+        const val circularImageView = "de.hdodenhof:circleimageview:${Versions.circularImageView}"
     }
 
     object Testing {

@@ -1,4 +1,4 @@
-package com.example.ataei.ui.home.list
+package com.example.ataei.ui.home.articles
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -13,7 +13,7 @@ import com.example.data.source.remote.model.ArticleDto
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class HomeListViewModel @Inject constructor(
+class ArticlesViewModel @Inject constructor(
     private val gameRepository: NewsRepository
 ) : BaseViewModel() {
 

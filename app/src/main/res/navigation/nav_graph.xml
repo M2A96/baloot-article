@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_articles"
-        android:name="com.example.ataei.ui.home.list.HomeListFragment"
+        android:name="com.example.ataei.ui.home.articles.ArticlesFragment"
         android:label="HomeList"
         tools:layout="@layout/fragment_home_list" />
 

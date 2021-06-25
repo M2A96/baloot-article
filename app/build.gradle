@@ -81,6 +81,8 @@ dependencies {
     implementation Libs.Common.glide
     kapt Libs.Common.glideCompiler
 
+    implementation Libs.Common.circularImageView
+
     // Test Dependencies
     testImplementation Libs.Testing.junit
     testImplementation Libs.Testing.mockitoKotlin

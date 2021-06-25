@@ -25,4 +25,5 @@ object Versions {
     const val mockitoKotlin = "1.6.0"
     const val navigationComponent = "2.3.5"
     const val fragment = "1.2.5"
+    const val circularImageView = "3.1.0"
 }

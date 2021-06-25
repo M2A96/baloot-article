@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.ataei.ui.home.list.HomeListViewModel" />
+            type="com.example.ataei.ui.home.articles.ArticlesViewModel" />
 
         <variable
             name="adapter"
@@ -43,7 +43,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_suggested_games"
-            tools:listitem="@layout/suggested_game_item" />
+            tools:listitem="@layout/article_item" />
 
         <androidx.core.widget.ContentLoadingProgressBar
             android:id="@+id/progressBar"

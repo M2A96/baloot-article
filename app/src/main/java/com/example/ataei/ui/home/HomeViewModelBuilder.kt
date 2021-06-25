@@ -2,7 +2,7 @@ package com.example.ataei.ui.home
 
 import androidx.lifecycle.ViewModel
 import com.example.ataei.di.builder.ViewModelKey
-import com.example.ataei.ui.home.list.HomeListViewModel
+import com.example.ataei.ui.home.articles.ArticlesViewModel
 import com.example.ataei.ui.home.profile.ProfileViewModel
 import dagger.Binds
 import dagger.Module
@@ -18,8 +18,8 @@ abstract class HomeViewModelBuilder {
 
     @Binds
     @IntoMap
-    @ViewModelKey(HomeListViewModel::class)
-    abstract fun bindHomeListViewModel(homeListViewModel: HomeListViewModel): ViewModel
+    @ViewModelKey(ArticlesViewModel::class)
+    abstract fun bindArticlesViewModel(articlesViewModel: ArticlesViewModel): ViewModel
 
     @Binds
     @IntoMap
