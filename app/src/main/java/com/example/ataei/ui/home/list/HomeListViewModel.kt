@@ -21,8 +21,7 @@ class HomeListViewModel @Inject constructor(
     val articles: LiveData<List<ArticleDto>>
         get() = _articles
 
-    private val pageSize = 20
-    private var pageNumber = 0
+    private var pageNumber = 1
 
 
     init {
