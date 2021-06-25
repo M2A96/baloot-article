@@ -106,4 +106,8 @@ abstract class BaseAdapter<T : Any, B : ViewDataBinding>(
         items.clear()
         items.addAll(newItems)
     }
+
+    open fun addNewItems(newItems: List<T>) {
+        items.addAll(newItems)
+    }
 }

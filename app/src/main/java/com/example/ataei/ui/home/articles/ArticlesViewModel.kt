@@ -21,7 +21,9 @@ class ArticlesViewModel @Inject constructor(
     val articles: LiveData<List<ArticleItem>>
         get() = _articles
 
-    private var pageNumber = 0
+    val loadingLiveData = MutableLiveData<Boolean>()
+
+    private var pageNumber = 1
 
 
     init {
@@ -29,13 +31,20 @@ class ArticlesViewModel @Inject constructor(
     }
 
 
-    private fun getArticles() {
+    private fun getArticles(pageNumber: Int = 1) {
         viewModelScope.launch {
-            when (val result = articlesRepository.getArticles(++pageNumber)) {
+            loadingLiveData.value = true
+            when (val result = articlesRepository.getArticles(pageNumber)) {
                 is Right -> _articles.value = mapToArticleItem(result.b)
                 is Left -> showError(result.a)
             }
+            loadingLiveData.value = false
         }
+    }
+
+
+    fun loadMore() {
+        getArticles(++pageNumber)
     }
 
     private fun showError(error: Error) {

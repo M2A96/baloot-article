@@ -21,7 +21,7 @@
         android:background="@color/darkJungleGreen">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/gameRecyclerView"
+            android:id="@+id/articlesRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="22dp"
@@ -39,10 +39,12 @@
             android:id="@+id/progressBar"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:layout_constraintBottom_toBottomOf="@+id/gameRecyclerView"
+            android:elevation="16dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/articlesRecyclerView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/gameRecyclerView" />
+           />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
