@@ -55,7 +55,12 @@ interface BaseNavigator {
      * @param cls         the Activity class to be opened.
      * @param requestCode the request code that will be passed to the opened Activity.
      */
-    fun startActivityForResult(activity: FragmentActivity, cls: Class<*>, requestCode: Int, bundle: Bundle) {
+    fun startActivityForResult(
+        activity: FragmentActivity,
+        cls: Class<*>,
+        requestCode: Int,
+        bundle: Bundle
+    ) {
         val intent = Intent(activity, cls)
         intent.putExtras(bundle)
         activity.startActivityForResult(intent, requestCode)
@@ -64,6 +69,11 @@ interface BaseNavigator {
     fun navigateTo(fragment: Fragment, @IdRes destinationId: Int) {
         Navigation.findNavController(fragment.requireView()).navigate(destinationId)
     }
+
+    fun navigateToWithBundle(fragment: Fragment, @IdRes destinationId: Int, bundle: Bundle) {
+        Navigation.findNavController(fragment.requireView()).navigate(destinationId, bundle)
+    }
+
 
     fun navigateBack(fragment: Fragment) {
         Navigation.findNavController(fragment.requireView()).popBackStack().not()

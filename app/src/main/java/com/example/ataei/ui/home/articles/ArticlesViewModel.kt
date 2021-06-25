@@ -1,5 +1,6 @@
 package com.example.ataei.ui.home.articles
 
+import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -7,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import arrow.core.Either.Left
 import arrow.core.Either.Right
 import com.example.ataei.ui.base.BaseViewModel
+import com.example.ataei.ui.home.HomeNavigator
 import com.example.data.model.Error
 import com.example.data.repository.NewsRepository
 import com.example.data.source.remote.model.ArticleDto
@@ -14,7 +16,9 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class ArticlesViewModel @Inject constructor(
-    private val articlesRepository: NewsRepository
+    private val articlesRepository: NewsRepository,
+    private val homeNavigator: HomeNavigator
+
 ) : BaseViewModel() {
 
     private val _articles = MutableLiveData<List<ArticleItem>>(emptyList())
@@ -22,6 +26,13 @@ class ArticlesViewModel @Inject constructor(
         get() = _articles
 
     val loadingLiveData = MutableLiveData<Boolean>()
+
+
+    private val _selectedArticle = MutableLiveData<ArticleItem>()
+    val selectedArticle: LiveData<ArticleItem>
+        get() = _selectedArticle
+
+    lateinit var article: ArticleItem
 
     private var pageNumber = 1
 
@@ -52,7 +63,10 @@ class ArticlesViewModel @Inject constructor(
     }
 
     fun onItemClicked(articleItem: ArticleItem) {
-        Log.d(TAG, "onItemClicked() called  with: gamesItem = $articleItem")
+        _selectedArticle.value = articleItem
+        fragmentAction {
+            homeNavigator.navigateToArticleDetail(it)
+        }
     }
 
     private fun mapToArticleItem(articleDtos: List<ArticleDto>): List<ArticleItem> {

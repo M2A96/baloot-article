@@ -9,13 +9,28 @@
         android:id="@+id/nav_articles"
         android:name="com.example.ataei.ui.home.articles.ArticlesFragment"
         android:label="HomeList"
-        tools:layout="@layout/fragment_home_list" />
+        tools:layout="@layout/fragment_home_list">
+
+        <action
+            android:id="@+id/articlesListToArticleDetailAction"
+            app:destination="@id/article_detail" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_profile"
         android:name="com.example.ataei.ui.home.profile.ProfileFragment"
         android:label="Profile"
-        tools:layout="@layout/fragment_profile"/>
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/article_detail"
+        android:name="com.example.ataei.ui.home.detail.ArticleDetailFragment"
+        android:label="ArticleDetail"
+        tools:layout="@layout/fragment_article_detail">
+        <argument
+            android:name="articleUrl"
+            app:argType="string"/>
+    </fragment>
 
 
 </navigation>
