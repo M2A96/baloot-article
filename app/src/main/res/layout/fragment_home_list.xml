@@ -17,8 +17,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/darkJungleGreen">
+        android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/articlesRecyclerView"
@@ -35,16 +34,14 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:listitem="@layout/article_item" />
 
-        <androidx.core.widget.ContentLoadingProgressBar
+        <com.pnikosis.materialishprogress.ProgressWheel
             android:id="@+id/progressBar"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:elevation="16dp"
-            android:visibility="visible"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:changeVisibility="@{viewModel.loadingLiveData}"
             app:layout_constraintBottom_toBottomOf="@+id/articlesRecyclerView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-           />
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

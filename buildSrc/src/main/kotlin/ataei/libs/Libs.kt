@@ -57,6 +57,9 @@ object Libs {
         const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
         const val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.glide}"
         const val circularImageView = "de.hdodenhof:circleimageview:${Versions.circularImageView}"
+        const val materialishProgress =
+            "com.pnikosis:materialish-progress:${Versions.progressWheel}"
+
     }
 
     object Testing {

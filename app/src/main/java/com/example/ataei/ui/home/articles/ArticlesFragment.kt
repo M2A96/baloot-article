@@ -1,6 +1,7 @@
 package com.example.ataei.ui.home.articles
 
 import android.util.Log
+import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -47,7 +48,6 @@ class ArticlesFragment : BaseFragment<ArticlesViewModel, FragmentHomeListBinding
 
         viewModel.loadingLiveData.observeSafe(viewLifecycleOwner) {
             scrollListener.loading = it
-            binding.progressBar.isVisible = it
         }
     }
 }

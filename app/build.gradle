@@ -82,6 +82,7 @@ dependencies {
     kapt Libs.Common.glideCompiler
 
     implementation Libs.Common.circularImageView
+    implementation Libs.Common.materialishProgress
 
     // Test Dependencies
     testImplementation Libs.Testing.junit
