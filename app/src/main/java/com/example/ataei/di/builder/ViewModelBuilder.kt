@@ -3,6 +3,7 @@ package com.example.ataei.di.builder
 import androidx.lifecycle.ViewModelProvider
 import com.example.ataei.ui.home.HomeViewModelBuilder
 import com.example.ataei.ui.base.GameViewModelFactory
+import com.example.ataei.ui.spash.SplashViewModelBuilder
 import dagger.Binds
 import dagger.Module
 
@@ -17,7 +18,8 @@ import dagger.Module
 
 @Module(
     includes = [
-        (HomeViewModelBuilder::class)
+        (HomeViewModelBuilder::class),
+        (SplashViewModelBuilder::class)
     ]
 )
 abstract class ViewModelBuilder {

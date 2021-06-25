@@ -15,4 +15,6 @@ class HomeNavigator @Inject constructor() : BaseNavigator {
         navigateTo(fragment, R.id.articlesListToArticleDetailAction)
     }
 
+
+
 }

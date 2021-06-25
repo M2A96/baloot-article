@@ -25,4 +25,5 @@ abstract class HomeViewModelBuilder {
     @IntoMap
     @ViewModelKey(ProfileViewModel::class)
     abstract fun bindProfileViewModel(profileViewModel: ProfileViewModel): ViewModel
+
 }

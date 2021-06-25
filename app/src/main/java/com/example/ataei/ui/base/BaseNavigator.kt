@@ -28,6 +28,22 @@ interface BaseNavigator {
         ActivityNavigator(activity).navigate(destination, bundle, null, null)
     }
 
+
+    /**
+     * Start an Activity
+     *
+     * @param activity requested activity
+     * @param cls the Activity class to be opened.
+     */
+    fun startActivity(activity: FragmentActivity, cls: Class<*>) {
+        val intent = Intent(activity, cls)
+        val destination = ActivityNavigator(activity)
+            .createDestination()
+            .setIntent(intent)
+        ActivityNavigator(activity).navigate(destination, null, null, null)
+    }
+
+
     /**
      * Finish an Activity
      * @param activity requested activity

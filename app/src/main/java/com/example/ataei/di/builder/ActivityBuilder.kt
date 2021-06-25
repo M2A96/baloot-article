@@ -2,6 +2,7 @@ package com.example.ataei.di.builder
 
 import com.example.ataei.ui.home.HomeActivity
 import com.example.ataei.ui.home.HomeFragmentProvider
+import com.example.ataei.ui.spash.SplashActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -14,4 +15,7 @@ abstract class ActivityBuilder {
 
     @ContributesAndroidInjector(modules = [(HomeFragmentProvider::class)])
     internal abstract fun bindMainActivity(): HomeActivity
+
+    @ContributesAndroidInjector
+    internal abstract fun bindSplashActivity(): SplashActivity
 }
